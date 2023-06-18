@@ -13,10 +13,10 @@ class Poll(models.Model):
 
 class Choice(models.Model):
     poll = models.ForeignKey(Poll,related_name='choices',on_delete=models.CASCADE)
-    choie_text = models.CharField(max_length=100)
+    choice_text = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.choie_text
+        return self.choice_text
 
 class Vote(models.Model):
     choice = models.ForeignKey(Choice,related_name='votes',on_delete=models.CASCADE)
